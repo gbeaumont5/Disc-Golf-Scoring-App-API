@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const scoreSchema = mongoose.Schema({
     courseName: {type: String, required: true},
-    playerName: {type: String, required: true},
+    playerName: {type: String},
     hole1: {type: Number, default: 3},
     par1: {type: Number, default: 3},
     hole2: {type: Number, default: 3},
@@ -41,3 +41,6 @@ const scoreSchema = mongoose.Schema({
     par18: {type: Number, default: 3},
     total: {type: Number, default: 0}
 })
+
+module.exports = mongoose.model('Score', scoreSchema);
+
